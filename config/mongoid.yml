@@ -1,0 +1,38 @@
+development:
+  sessions:
+    default:
+      database: app_juice_dev
+      hosts:
+        - localhost:27017
+      options:
+        safe: true
+        consistency: :strong
+  options:
+    allow_dynamic_fields: false
+    identity_map_enabled: true
+    raise_not_found_error: true
+test:
+  sessions:
+    default:
+      database: bt_test
+      hosts:
+        - localhost:27017
+      options:
+        safe: true
+        consistency: :strong
+  options:
+    allow_dynamic_fields: false
+    identity_map_enabled: true
+    raise_not_found_error: true
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOLAB_URI'] %>
+      options:
+        skip_version_check: true
+        safe: true
+  options:
+    allow_dynamic_fields: false
+    identity_map_enabled: true
+    protect_sensitive_fields: true
+    raise_not_found_error: true
