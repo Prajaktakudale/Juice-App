@@ -33,4 +33,6 @@ post '/employee/juice/comsumption' do
   		request = Employee.new(:employee_id => emp_id, :juice_requests => [JuiceRequest.new({:no_of_glasses => numberOfGlasses, :date_time => date_time})])
   		request.save!
 	end
+	status 200
+  	body ''
 end
