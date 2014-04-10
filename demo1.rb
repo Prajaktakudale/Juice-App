@@ -11,7 +11,7 @@ get '/generateqr' do
 	erb :index
 end
 
-post '/generateqr' do
+post '/generateqr/create' do
 	employee_id = params["Employee Id"]
 	url = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=#{employee_id}"
 	erb :qr_generated, :locals => {:employee_id => employee_id, :qr_url => url }
