@@ -5,5 +5,6 @@ class Employee
 
     embeds_many :juice_requests
 
-# validates_presence_of :employee_id, :message => "Incorrect or missing employee Id"
+	validates_presence_of :employee_id, :message => "Incorrect or missing employee Id"
+
 end
