@@ -28,7 +28,7 @@ post '/employee/juice/comsumption' do
 
   	date_time = new_juice_request["date_time"]
   	if(Employee.where({:employee_id => emp_id}).exists?)
-  		Employee.find_by(employee_id: "12345").juice_requests << JuiceRequest.new({:no_of_glasses => numberOfGlasses,:date_time => date_time})
+  		Employee.find_by(employee_id: emp_id).juice_requests << JuiceRequest.new({:no_of_glasses => numberOfGlasses,:date_time => date_time})
   	else
   		request = Employee.new(:employee_id => emp_id, :juice_requests => [JuiceRequest.new({:no_of_glasses => numberOfGlasses, :date_time => date_time})])
   		request.save!
