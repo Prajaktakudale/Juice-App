@@ -1,21 +1,22 @@
 #title { 
 	text-align: center;
-	background-color: aliceblue;
+	background-color: #dff0d8;
+	padding: 20px 0px;
 }
 
 #form{
 	text-align: center;
 }
 
-#me1{
-	height: 80px;
-	font-size: 40px;
+form .emp_box {
+	height: 50px;
+	font-size: 30px;
 }
 
-#me2{
-
-	text-align: center;
-	font-size: 40px;
+form .btn {
+	width: 200px;
+	height: 50px;
+	font-size: 25;
 }
 
 .center {
