@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+ 
+	</head>
+	<body>
+   		<h1  id = "title">QR Code for <%= employee_id %></h1>		
+   		<div class="center">
+   			<img src="<%=qr_url%>" class="img-rounded">
+   		</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+ 
+	</head>
+	<body>
+   		<h1  id = "title">Generate QR Code</h1>
+<br><br>
+		<div class = "container-fluid-right">
+			<form action="/generateqr" method="POST">
+				<div class="row-fluid">
+				  <div id = "me" class="col-lg-12 col-xs-12 col-sm-12">
+				    <div id = "me11" class="input-group">
+				      <input id = "me1" type="text" class="form-control" name="Employee Id" id="emp_id" placeholder="Employee Id">
+				      <span class="input-group-btn">
+				        <input id = "me2" class="btn btn-default" type="submit" />
+				      </span>
+				    </div>
+				  </div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

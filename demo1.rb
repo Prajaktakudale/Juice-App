@@ -8,12 +8,13 @@ Mongoid.load!("./config/mongoid.yml")
 
 
 get '/generateqr' do
-	erb :layout
+	erb :index
 end
 
 post '/generateqr' do
 	employee_id = params["Employee Id"]
-	redirect "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=#{employee_id}", 303
+	url = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=#{employee_id}"
+	erb :qr_generated, :locals => {:employee_id => employee_id, :qr_url => url }
 end
 
 get '/total/numberOfGlasses' do
