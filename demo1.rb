@@ -7,11 +7,11 @@ require './model/juice_request.rb'
 Mongoid.load!("./config/mongoid.yml")
 
 
-get '/generateQR' do
+get '/generateqr' do
 	erb :layout
 end
 
-post '/generateQR' do
+post '/generateqr' do
 	employee_id = params["Employee Id"]
 	redirect "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=#{employee_id}", 303
 end
