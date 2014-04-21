@@ -3,21 +3,35 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+		<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
+
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script type='text/javascript' src='script.js'></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
-	<body>
-   		<h1  id = "title">Generate QR Code</h1>
-<br><br>
-		<div class = "container-fluid">
-			<form action="/generateqr/create" method="POST">
 
-				<input id = "emp_id" type="text" class="form-control emp_box" name="Employee Id" placeholder="Employee Id">
+	<body>
+   		<h1  id = "title">Select Date</h1>
+		<br><br>
+		<div class = "container-fluid">
+			<form action="total/numberOfGlasses" method="get">
+				<input id="start_date" type="text" placeholder="From">
+				<input id="end_date" type="text" Placeholder="To">
+				<br></br>
 				<div class="center">
 					<input type="submit" class="btn btn-success">
 				</div>
-
 			</form>
 		</div>
+
+		<script>
+			$(document).ready(function() {
+	   			$("#start_date").datepicker();
+	    		$("#end_date").datepicker();
+			});
+		</script>
+
 	</body>
 </html>
