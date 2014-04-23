@@ -36,7 +36,7 @@ end
 
 post '/employee/juice/comsumption' do
     new_juice_request = request.body.read
-  	emp_id = new_juice_request["employee_id"].to_i
+  	emp_id = new_juice_request["employee_id"]
   	numberOfGlasses = new_juice_request["numberOfGlasses"].to_i
   	date_time = new_juice_request["date_time"]
 
