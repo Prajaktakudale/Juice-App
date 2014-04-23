@@ -14,32 +14,31 @@ get '/generaterecord/glasses' do
 end
 
 post '/total/numberOfGlasses' do
-  #start_date = params["startDate"]
-  #end_date = params["endDate"]
+  start_date = params["startDate"]
+  end_date = params["endDate"]
   
-  #s_month = start_date.split("/").first
-  #s_day = start_date.split("/").second
-  #s_year = start_date.split("/").third
-  #st_date = DateTime.new(s_year.to_i,s_month.to_i,s_day.to_i,00,00,00,00).to_i
+  s_month = start_date.split("/").first
+  s_day = start_date.split("/").second
+  s_year = start_date.split("/").third
+  st_date = DateTime.new(s_year.to_i,s_month.to_i,s_day.to_i,00,00,00,00).to_i
   
-  #e_month = end_date.split("/").first
-  ##e_day = end_date.split("/").second
-  #e_year = end_date.split("/").third
-  #ed_date = DateTime.new(e_year.to_i,e_month.to_i,e_day.to_i,23,59,59,00).to_i
+  e_month = end_date.split("/").first
+  e_day = end_date.split("/").second
+  e_year = end_date.split("/").third
+  ed_date = DateTime.new(e_year.to_i,e_month.to_i,e_day.to_i,23,59,59,00).to_i
 
   
-  # "#{Employee.all.between(:juice_requests => {:date_time => st_date..ed_date}).count}"
+  "#{Employee.all.between(:juice_requests => {:date_time => st_date..ed_date}).count}"
 
-"#{Employee.all.collect(&:juice_requests).flatten.length}"
+#{}"#{Employee.all.collect(&:juice_requests).flatten.length}"
 
 end
 
 post '/employee/juice/comsumption' do
     new_juice_request = JSON::parse request.body.read
-
     emp_id = new_juice_request["employee_id"]
   	number_ofGlasses = new_juice_request["numberOfGlasses"].to_i
-  	date_time = new_juice_request["date_time"]
+  	date_time = new_juice_request["date_time"].to_i
 
   	if(Employee.where({:employee_id => emp_id}).exists?)
   		Employee.find_by(employee_id: emp_id).juice_requests << JuiceRequest.new({:no_of_glasses => number_ofGlasses,:date_time => date_time})
@@ -48,5 +47,4 @@ post '/employee/juice/comsumption' do
   		request.save!
 	end
 	status 200
-  	body ''
 end
