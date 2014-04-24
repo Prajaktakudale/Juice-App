@@ -34,8 +34,8 @@ end
 post '/employee/juice/comsumption' do
     new_juice_request = JSON::parse request.body.read
     emp_id = new_juice_request["employee_id"]
-  	number_ofGlasses = new_juice_request["numberOfGlasses"].to_i
-  	date_time = new_juice_request["date_time"].to_i
+  	number_ofGlasses = new_juice_request["numberOfGlasses"]
+  	date_time = new_juice_request["date_time"]
 
   	if(Employee.where({:employee_id => emp_id}).exists?)
   		Employee.find_by(employee_id: emp_id).juice_requests << JuiceRequest.new({:no_of_glasses => number_ofGlasses,:date_time => date_time})
