@@ -20,17 +20,14 @@ post '/total/numberOfGlasses' do
   s_month = start_date.split("/").first
   s_day = start_date.split("/").second
   s_year = start_date.split("/").third
-  st_date = DateTime.new(s_year.to_i,s_month.to_i,s_day.to_i,00,00,00,00).to_i
+  st_date = DateTime.new(s_year.to_i,s_month.to_i,s_day.to_i,00,00,00).to_i
   
   e_month = end_date.split("/").first
   e_day = end_date.split("/").second
   e_year = end_date.split("/").third
-  ed_date = DateTime.new(e_year.to_i,e_month.to_i,e_day.to_i,23,59,59,00).to_i
-
+  ed_date = DateTime.new(e_year.to_i,e_month.to_i,e_day.to_i,23,59,59).to_i
   
-  "#{Employee.all.between(:juice_requests => {:date_time => st_date..ed_date}).count}"
-
-#{}"#{Employee.all.collect(&:juice_requests).flatten.length}"
+  "#{Employee.all.between("juice_requests.date_time" => st_date..ed_date).pluck(:juice_requests).flatten.count}"
 
 end
 
